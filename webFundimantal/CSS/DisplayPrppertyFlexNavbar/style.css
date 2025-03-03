@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.nav{
+    background-color: #333333;
+    display: flex;
+    justify-content: space-between ;
+    align-items: center;
+    padding: 0 15px ;
+}
+.nav-links{
+    display: flex;
+    align-items: center;
+}
+ul{
+    list-style-type: none;
+    
+}
+a{
+    text-decoration: none;
+    color: #e1e1e1;
+    
+}
+h1{
+    color: #e1e1e1;
+}
+li{
+    padding:15px;
+}
+.btn{
+    color:#e1e1e1 ;
+    background-color: #17a2b8;
+    border: black solid 2px;
+    box-shadow: 4px 4px black;
+    padding: 10px;
+    
+}
