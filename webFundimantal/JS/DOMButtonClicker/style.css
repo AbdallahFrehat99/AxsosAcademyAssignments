@@ -1,0 +1,93 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+width: 80%;
+margin: auto;
+}
+header{
+    display:flex ;
+    justify-content: space-around;
+    background-color: #cccccc;
+    height: 60px;
+    align-items: center;
+    margin-bottom: 25px;
+}
+header input{
+    width: 30%;
+    border: solid 2px black;
+    height: 25px;
+    padding-left: 5px;
+}
+header button{
+    width: 8%;
+    height: 25px;
+    background-color: #2a78e4;
+    color:white;
+    box-shadow: 2px 2px black;
+}
+main{
+    display: flex;
+}
+section{
+    flex: 2;
+    padding-right: 20px;
+}
+section article{
+    border: solid 3px black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    height: 60%;
+}
+.left-side{
+    padding-left: 15px;
+    text-align: center;
+
+}
+.left-side h4{
+    padding: 5px 0;
+}
+.left-side p{
+    padding-bottom: 15px ;
+}
+.right-side{
+    padding: 0 15px;
+    width: 45%;
+}
+section  button{
+    width: 100%;
+    height: 30px;
+    background-color:#fed966;
+    box-shadow: 2px 2px black;
+
+}
+aside{
+    flex: 1;
+}
+aside div{
+    border: solid 3px black;
+    text-align: center;
+    padding: 10px 0;
+}
+aside p{
+    font-size: larger;
+    font-weight: 400;
+    width: 70%;
+    margin:auto ;
+    text-align: left;
+
+}
+span{
+    font-weight: bolder;
+}
+aside button{
+    width: 70%;
+    height: 30px;
+    margin: 10px 0;
+    background-color: #92c47d;
+    box-shadow: 2px 2px black;
+}
+/*  <--https://www.w3schools.com/css/css_text_spacing.asp --> */

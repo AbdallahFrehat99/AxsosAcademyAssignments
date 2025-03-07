@@ -1,0 +1,154 @@
+*{
+    padding: 0;
+    margin: 0;
+
+}
+body{
+    margin: 0 auto;
+    color: white;
+    background-color: #245076;
+}
+header{
+    padding: 0 30px 30px 30px;
+}
+header section{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.logo img{
+    width: 60%;
+}
+.text-size{
+    text-align: right;
+    margin-right: 22px;
+}
+.text-size a{
+    color: #f2d237;
+}
+.search{
+    background-color: #444444;
+    height: 50px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px #444444;
+    border-radius: 10px;
+    box-shadow: rgb(40, 38, 38) 2px 2px;
+}
+.search button{
+    background-color: #245075;
+    color: white;
+    width: 30px;
+    height: 25px;
+    border: solid 1px white;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+.search input{
+    height: 30px;
+    width: 150px;
+    text-align: center;
+    background-color: white;
+    border: solid 1px white;
+
+}
+nav{
+    border: 2px solid #437bac;
+    width: 90%;
+    height: 30px;
+    margin: auto;
+    background-color: #437bac;
+    border-radius: 5px;
+    box-shadow: rgb(40, 38, 38) 2px 2px;
+}
+
+main{
+    width: 970px;
+    margin: auto;
+    padding-bottom: 20px;
+}
+a{
+    color: white;
+
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 5px;
+}
+nav a{
+    text-decoration: none;
+}
+.main-section{
+    display: flex;
+    justify-content: space-evenly;
+}
+.left-aside{
+    text-align: center;
+}
+.left-aside ul{
+    list-style-position: inside;
+}
+.left-aside li::marker {
+    color: #f2d237;
+  }
+
+.right-aside{
+    width: 60%;
+    text-align: center;
+}
+
+.right-aside ul{
+    list-style: none;
+    font-size: larger;
+    color: #f2d237;
+    line-height: 25px;
+    padding: 10px 0;
+}
+.last-point{
+    font-size: large;
+}
+.second-section{
+    background-color: white;
+}
+.inner-second-section{
+    width: 970px;
+    margin: auto;
+    color: black;
+    display: flex;
+    text-align: center;
+    padding: 20px;
+}
+.inner-second-section article{
+    width: 48%;
+    margin: 0 auto;
+    border-top: solid 2px #88aed1;
+    justify-content: space-between;
+}
+.inner-second-section li{
+    margin-left: 50px;
+}
+.inner-second-section a{
+    color: rgb(136, 174, 209);
+    text-decoration: none;
+}
+.article-container{
+    width: 80%;
+}
+.article-container p{
+    padding: 10px 0;
+}
+footer{
+    text-align: center;
+    padding: 20px 0;
+    color: rgba(136, 174, 209, .5);
+}
+footer section{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px 0;
+
+}
