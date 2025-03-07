@@ -3,7 +3,7 @@
     margin: 0;
 }
 body{
-width: 80%;
+width: 50%;
 margin: auto;
 }
 header{
@@ -90,4 +90,3 @@ aside button{
     background-color: #92c47d;
     box-shadow: 2px 2px black;
 }
-/*  <--https://www.w3schools.com/css/css_text_spacing.asp --> */
