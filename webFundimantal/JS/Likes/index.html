@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Likes-project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <h1>Network</h1>
+    </nav>
+    <p id="title">Your Feed</p>
+    <!-- Main -> Flex Box -->
+    <main>
+        <!-- First Column in main Flex Box -->
+        <aside>
+            <img src="person.png" alt="person picture">
+            <a href="#" id="avatar">Add an avatar</a>
+            <h2>James Doe</h2>
+        </aside>
+        <!-- Second Column in main Flex Box -->
+        <section>
+            <article> <!-- Post 1 -->
+                <div class="row">
+                    <h2>Neil M</h2>
+                    <p><span id="likes1">9</span> like(s)</p>
+                    <button id="likeButton1" onclick="like(1)">Like</button>
+                </div>
+                <p class="post">I just set up this new discord bot, let me know what you all think. <a href="#">link</a>
+                </p>
+            </article>
+
+            <article> <!-- Post 2 -->
+                <div class="row">
+                    <h2>Nichole K</h2>
+                    <p><span id="likes2">12</span> like(s)</p>
+                    <button id="likeButton2" onclick="like(2)">Like</button>
+                </div>
+                <p class="post">Just finished my <a href="#">next comic</a>, check it out.</p>
+            </article>
+
+            <article> <!-- Post 3 -->
+                <div class="row">
+                    <h2>Jim R</h2>
+                    <p><span id="likes3">9</span> like(s)</p>
+                    <button id="likeButton3" onclick="like(3)">Like</button>
+                </div>
+                <p class="post">I can't stop listening to the <a href="#">new album</a>. Who else is liking it?</p>
+            </article>
+        </section>
+    </main>
+    <section>
+        <script src="script.js"></script>
+</body>
+
+</html>
