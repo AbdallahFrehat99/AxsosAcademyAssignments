@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1>DojoWeather</h1>
+            <div><a onclick="alert('Loading weather report...')" href="#">Burbank</a>
+                <a onclick="alert('Loading weather report...')" href="#">Chicago</a>
+                <a onclick="alert('Loading weather report...')" href="#">Dallas</a></div>
+        </div>
+    </header>
+    <main>
+        <section class="upper-section">
+            <h2>San Jose</h2>
+            <div class="temperature">
+                <label for="temperature">show temperature in </label>
+                <select onchange="changeTemperature(this)" name="temperature" id="temperature">
+                    <option value="C">°C</option>
+                    <option value="F">°F</option>
+                </select>
+            </div>
+        </section>
+        <section class="days-weather">
+            <article>
+                <h3>Today</h3>
+                <img src="icons/some_rain.png" alt="some rain picture">
+                <p>some rain</p>
+                <div class="degree">
+                    <span class="hot"><span>24</span>°</span>
+                    <span class="cold"><span>18</span>°</span>
+                </div>
+            </article>
+            <article>
+                <h3>Tomorrow</h3>
+                <img src="icons/some_sun.png" alt="sun picture">
+                <p>some sun</p>
+                <div class="degree">
+                    <span class="hot"><span>27</span>°</span>
+                    <span class="cold"><span>19</span>°</span>
+                </div>
+            </article>
+            <article>
+                <h3>Friday</h3>
+                <img src="icons/some_clouds.png" alt="clouds picture">
+                <p>some clouds</p>
+                <div class="degree">
+                    <span class="hot"><span>21</span>°</span>
+                    <span class="cold"><span>16</span>°</span>
+                </div>
+            </article>
+            <article>
+                <h3>Satarday</h3>
+                <img src="icons/some_sun.png" alt="sun picture">
+                <p>some sun</p>
+                <div class="degree">
+                    <span class="hot"><span>26</span>°</span>
+                    <span class="cold"><span>21</span>°</span>
+                </div>
+            </article>
+        </section>
+        <section class="cookie">
+            <img src="icons/cookie.png" alt="cookie icon">
+            <div>
+                <h4>Stop! Cookie time</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi praesentium eligendi iusto at, impedit alias numquam mollitia voluptate libero ex totam dolore odit quo magni quaerat ratione atque asperiores. Excepturi error temporibus atque obcaecati distinctio quis illo perspiciatis eius mollitia, ratione iure facilis ipsam ab ducimus reprehenderit praesentium. <a href="#">Read more...</a></p>
+            </div>
+            <button onclick="acceptCookie()">I Accept</button>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html
