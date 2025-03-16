@@ -5,9 +5,11 @@ function press(num) {
     let displayVariable = document.querySelector("#display");
     if (displayVariable.innerText == 0) {
         displayVariable.innerText = num;
-    } else if(calc==0){
+    } 
+    else if(calc==0){
         displayVariable.innerText += num;
-    }else{
+    }
+    else{
         displayVariable.innerText = num;
 
     }
