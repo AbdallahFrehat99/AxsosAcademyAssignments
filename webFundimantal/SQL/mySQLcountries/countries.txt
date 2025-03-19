@@ -1,0 +1,35 @@
+1-select country.name ,countrylanguage.language , countrylanguage.percentage  
+from countrylanguage join country 
+on  country.code=countrylanguage.countrycode 
+where countrylanguage.language ="slovene" order by countrylanguage.percentage desc.
+--------------------------------------------------------------------------------------------------------------
+2-select country.name ,count(cities.id) as "cities"
+from country join cities 
+on  country.code=cities.country_code 
+group by country.name  order by count(cities.id) desc
+--------------------------------------------------------------------------------------------------------------
+3-select cities.name ,cities.population, cities.country_id
+from country join cities 
+on  country.code=cities.country_code where country.name="mexico"
+order by cities.population desc
+--------------------------------------------------------------------------------------------------------------
+4-select country.name ,countrylanguage.Language , countrylanguage.Percentage
+from country join countrylanguage 
+on  country.code=countrylanguage.countrycode where countrylanguage.Percentage > 89
+order by countrylanguage.Percentage desc
+--------------------------------------------------------------------------------------------------------------
+5-select name , surfacearea, population 
+from country
+where SurfaceArea<501 and Population >100000
+--------------------------------------------------------------------------------------------------------------
+6-select name , GovernmentForm, Capital,LifeExpectancy 
+from country
+where GovernmentForm = "Constitutional Monarchy" and Capital >200 and LifeExpectancy>75
+--------------------------------------------------------------------------------------------------------------
+7-select country.name ,cities.name , cities.district, cities.population
+from country join cities 
+on  country.code=cities.country_code where country.name="argentina" and cities.population >500000 and cities.district="Buenos Aires"
+--------------------------------------------------------------------------------------------------------------
+8-select country.Region ,count(country.code) as "countries"
+from country 
+group by country.Region  order by count(country.code) desc
