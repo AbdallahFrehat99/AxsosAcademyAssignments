@@ -1,0 +1,39 @@
+1-select customer.first_name,customer.last_name,customer.email,address.address 
+from customer join address on customer.address_id=address.address_id
+where address.city_id=312
+------------------------------------------------------------------------------------------------------------
+2-select f.film_id, f.title, f.description, f.release_year, f.rating, f.special_features, c.name
+from film f join film_category fc on f.film_id=fc.film_id 
+join category c on fc.category_id=c.category_id
+where c.name="comedy"
+------------------------------------------------------------------------------------------------------------
+3-select a.actor_id,concat(a.first_name," ", a.last_name) as "actor_name", f.title, f.description, f.release_year
+from film f join film_actor fa on f.film_id=fa.film_id
+join actor a on fa.actor_id=a.actor_id
+where a.actor_id=5
+------------------------------------------------------------------------------------------------------------
+4-select c.first_name, c.last_name, c.email, a.address 
+from customer c join address a on c.address_id=a.address_id
+join city ct on ct.city_id=a.city_id
+where c.store_id=1 and ct.city_id in(1,42,312,459)
+------------------------------------------------------------------------------------------------------------
+5-select title, description,release_year,rating,special_features
+from film join film_actor on film.film_id=film_actor.film_id
+where rating="g" and special_features like "%behind the scenes%" and film_actor.actor_id=15
+------------------------------------------------------------------------------------------------------------
+6-select f.film_id, f.title, a.actor_id,concat(a.first_name," ",a.last_name) as "actor_name"
+from film f join film_actor fa on f.film_id=fa.film_id
+join actor a on fa.actor_id=a.actor_id
+where f.film_id=369
+------------------------------------------------------------------------------------------------------------
+7-select f.title, f.description, f.release_year, f.rating,f.special_features, c.name
+from film f join film_category fc on f.film_id=fc.film_id
+join category c on fc.category_id=c.category_id
+where f.rental_rate=2.99 and c.name="drama"
+------------------------------------------------------------------------------------------------------------
+8-select f.title, f.description, f.release_year, f.rating,f.special_features, c.name,concat(a.first_name," ", a.last_name)as "actor_name"
+from film f join film_category fc on f.film_id=fc.film_id
+join category c on fc.category_id=c.category_id
+join film_actor fa on f.film_id=fa.film_id
+join actor a on fa.actor_id=a.actor_id
+where a.first_name="SANDRA" and a.last_name="KILMER" and c.name="action"
