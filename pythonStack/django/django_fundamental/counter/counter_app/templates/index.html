@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="container">
+    <h1>Counter </h1>
+    <p>{{count}}   times</p>
+    <p>{{visited}}  times</p>
+    <form action="reset" method="post">
+        {%csrf_token%}
+        <button type="submit">reset</button>
+    </form>
+    <form action="addtwo" method="post">
+        {%csrf_token%}
+        <button type="submit">Add Two</button>
+    </form>
+    <form action="addbyuser" method="post">
+        {%csrf_token%}
+        <label for="enterd_value">Enter Number</label>
+        <input type="number" name="enterd_value">
+        <button type="submit" class="add_by_user">Add By User</button>
+    </form>
+</div>
+</body>
+</html>
