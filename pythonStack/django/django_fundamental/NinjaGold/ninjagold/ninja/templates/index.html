@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {%load static%}
+    <link rel="stylesheet" href="{%static 'style.css'%}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="your-gold">
+            <label for="gold">
+                Your Gold: <input type="text" value="0" readonly>
+            </label>
+        </div>
+        <div class="forms">
+            <form action="earngold" method="post">
+                {%csrf_token%}
+                <h2>Farm</h2>
+                <p>(earns 10-20 gold)</p>
+                <input type="hidden" name="farm">
+                <input type="submit" value="Find Gold">
+            </form>
+            <form action="earngold" method="post">
+                {%csrf_token%}
+                <h2>Cave</h2>
+                <p>(earns 10-20 gold)</p>
+                <input type="hidden" name="cave">
+                <input type="submit" value="Find Gold">
+            </form>
+            <form action="earngold" method="post">
+                {%csrf_token%}
+                <h2>House</h2>
+                <p>(earns 10-20 gold)</p>
+                <input type="hidden" name="house">
+                <input type="submit" value="Find Gold">
+            </form>
+            <form action="earngold" method="post">
+                {%csrf_token%}
+                <h2>Farm</h2>
+                <p>(earns 10-20 gold)</p>
+                <input type="hidden" name="Quest">
+                <input type="submit" value="Find Gold">
+            </form>
+        </div>
+        <section>
+            <p>Activities :</p>
+            <p name="activities" id="activities" readonly></p>
+        </section>
+    </div>
+</body>
+
+</html>
