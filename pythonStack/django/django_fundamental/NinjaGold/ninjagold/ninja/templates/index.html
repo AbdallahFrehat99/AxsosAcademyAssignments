@@ -11,44 +11,53 @@
 
 <body>
     <div class="container">
+        
         <div class="your-gold">
             <label for="gold">
-                Your Gold: <input type="text" value="0" readonly>
+                Your Gold: <input type="text" name="total_gold" value="{{request.session.gold}}" readonly>
             </label>
         </div>
         <div class="forms">
-            <form action="earngold" method="post">
+            <form class="form-box" action="earngold" method="post">
                 {%csrf_token%}
                 <h2>Farm</h2>
                 <p>(earns 10-20 gold)</p>
-                <input type="hidden" name="farm">
+                <input type="hidden" name="place" value="farm">
                 <input type="submit" value="Find Gold">
             </form>
-            <form action="earngold" method="post">
+            <form class="form-box" action="earngold" method="post">
                 {%csrf_token%}
                 <h2>Cave</h2>
                 <p>(earns 10-20 gold)</p>
-                <input type="hidden" name="cave">
+                <input type="hidden" name="place" value="cave">
                 <input type="submit" value="Find Gold">
             </form>
-            <form action="earngold" method="post">
+            <form class="form-box" action="earngold" method="post">
                 {%csrf_token%}
                 <h2>House</h2>
                 <p>(earns 10-20 gold)</p>
-                <input type="hidden" name="house">
+                <input type="hidden" name="place" value="house">
                 <input type="submit" value="Find Gold">
             </form>
-            <form action="earngold" method="post">
+            <form class="form-box" action="earngold" method="post">
                 {%csrf_token%}
-                <h2>Farm</h2>
-                <p>(earns 10-20 gold)</p>
-                <input type="hidden" name="Quest">
+                <h2>Quest</h2>
+                <p>(earns/takes 0-50 gold)</p>
+                <input type="hidden" name="place" value="quest">
                 <input type="submit" value="Find Gold">
             </form>
         </div>
         <section>
             <p>Activities :</p>
-            <p name="activities" id="activities" readonly></p>
+            <div name="activities" id="activities">
+                {% for msg in request.session.activities %}
+                    {% if "lost" in msg %}
+                        <p class="msg" style="color: {{ request.session.red }};">{{ msg }}</p>
+                    {% else %}
+                        <p class="msg" style="color: {{ request.session.green }};">{{ msg }}</p>
+                    {% endif %}
+                {% endfor %}
+            </div>
         </section>
     </div>
 </body>
