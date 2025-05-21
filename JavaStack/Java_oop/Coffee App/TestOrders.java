@@ -7,7 +7,6 @@ public class TestOrders {
         kiosk.addMenuItem( "latte", 4.5 );
         kiosk.addMenuItem( "capuccino ", 3 );
         kiosk.addMenuItem( "muffin", 4 );
-
         kiosk.newOrder();
     }
 }

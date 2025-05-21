@@ -45,6 +45,7 @@ public class CoffeeKiosk {
             } catch (Exception e) {
                 // TODO: handle exception
                 System.out.println("Invalid input. Please enter a valid index.");
+                break;
             }
 
             // Get the item object from the menu, and add the item to the order
