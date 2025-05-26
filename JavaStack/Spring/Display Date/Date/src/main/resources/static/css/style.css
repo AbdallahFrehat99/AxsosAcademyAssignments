@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+
+.ccenter{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly ;
+  align-items: center;
+  gap: 4px;
+  margin:25% 0 0 0;
+  font-size:larger;
+}
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:25% 0 0 0;
+}
