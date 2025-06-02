@@ -20,4 +20,12 @@ public class BurgerService {
 	public Burger createBurger(Burger b) {
         return burgerRepository.save(b);
     }
+	
+	public Burger findBurger(Long id) {
+        return burgerRepository.findById(id).orElse(null);
+    }
+	
+	public Burger updateBurger(Burger b) {
+        return burgerRepository.save(b);
+    }
 }

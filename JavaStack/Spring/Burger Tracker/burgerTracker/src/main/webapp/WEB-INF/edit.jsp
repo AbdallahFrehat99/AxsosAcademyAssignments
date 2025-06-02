@@ -2,47 +2,21 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
 <%@ page isErrorPage="true" %> 
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Burger Tracker</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
 </head>
 <body>
-
-  <div class="container">
-    <h1>Burger Tracker</h1>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Burger Name</th>
-          <th>Restaurant Name</th>
-          <th>Rating (out of 5)</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-
-		<c:forEach var="burger1" items="${burgers}">
-        	<tr>
-        	    <td><c:out value="${burger1.burgerName}"></c:out></td>
-          		<td><c:out value="${burger1.resName}"></c:out></td>
-          		<td><c:out value="${burger1.rating}"></c:out></td>
-          		<td><a href="/burgers/edit/${burger1.id}">edit</a></td>
-        	</tr>
-        </c:forEach>
-      </tbody>
-    </table>
-
-
-
-<form:form action="/burgers" method="post" modelAttribute="burger">
-    <h2>Add a Burger:</h2>
-
+<form:form action="/burgers/${burger.id}" method="post" modelAttribute="burger">
+    <input type="hidden" name="_method" value="put">
+        <div class="inputs">
+        	<h2>Edit Burger:</h2>
+        	<a href="/" class="go-back">Go back</a>
+		</div>
 	<p>
 		<div class="inputs">
         	<form:label path="burgerName">Burger Name</form:label>        
@@ -72,8 +46,6 @@
 		<form:errors path="notes" cssClass="error"/>     
     </p>    
     <input Class="button" type="submit" value="Submit"/>
-</form:form>    
-
-  </div>
+</form:form>
 </body>
 </html>
