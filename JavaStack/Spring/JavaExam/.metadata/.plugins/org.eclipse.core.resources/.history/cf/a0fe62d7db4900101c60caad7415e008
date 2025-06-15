@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+body{
+	width:70%;
+	text-align: center;
+}
+.reg{
+	display: flex;
+	justify-content: space-around;
+}

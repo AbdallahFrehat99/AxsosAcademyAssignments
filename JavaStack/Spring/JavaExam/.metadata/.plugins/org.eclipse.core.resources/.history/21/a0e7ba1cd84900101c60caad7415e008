@@ -1,0 +1,62 @@
+package com.example.exam.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.example.exam.models.Talk;
+import com.example.exam.models.User;
+import com.example.exam.services.TalkService;
+import com.example.exam.services.UserService;
+
+import jakarta.validation.Valid;
+
+@Controller
+public class TalkController {
+
+	@Autowired
+	TalkService talkService ;
+	@Autowired
+	UserService userService ;
+	
+	
+	
+	 @GetMapping("/addtalk")
+	    public String newNinja(@Valid @ModelAttribute("talk") Talk talk, BindingResult result, Model model) {
+	        return "addTalk.jsp";
+	    }
+	
+	@PostMapping("/createtalk")
+	public String createTalk(@Valid @ModelAttribute("talk") Talk talk, BindingResult result, Model model, 
+			@RequestParam(value="user") Long userId ) {
+		if (result.hasErrors()) {
+			return "addTalk.jsp";
+		} else {
+			User speaker = userService.getUserById(userId);
+			talk.setUser(speaker);
+			talkService.createTalk(talk);
+			return "redirect:/dashboard";
+		}
+	}
+	
+	@GetMapping("/talk/{id}")
+	public String renderCategory(@PathVariable("id") Long id,Model model) {
+		Talk talk=talkService.findTalk(id);
+	 	model.addAttribute("talk",talk);
+
+		return "talkDetails.jsp";
+	}
+	
+	@DeleteMapping("/deletetalk/{id}")
+    public String destroy(@PathVariable("id") Long id) {
+		talkService.deleteTalk(id);
+        return "redirect:/dashboard";
+    }
+}

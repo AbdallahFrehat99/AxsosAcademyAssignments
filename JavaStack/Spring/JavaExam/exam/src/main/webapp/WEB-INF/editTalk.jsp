@@ -1,0 +1,60 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page isErrorPage="true"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Update Talk</title>
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+<body>
+	<div class="jus">
+		<h1>Welcome ${loggedUser.firstName}</h1>
+		<a href="/logout">Log out</a>
+	</div>
+	<div class="reg">
+		<form:form action="/update/${talk.id}" method="post"
+			modelAttribute="talk">
+			<input type="hidden" name="_method" value="put">
+			<h1>Update the Talk</h1>
+			<div class="field">
+
+				<form:label path="talkTitle">Talk Title:</form:label>
+				<form:input path="talkTitle" />
+			</div>
+			<br>
+			<div class="field">
+
+				<form:label path="talkDate">Talk Date:</form:label>
+				<form:input path="talkDate" type="date" />
+			</div>
+			<br>
+			<div class="field">
+
+				<form:label path="talkDetails">Talk Details:</form:label>
+				<form:input path="talkDetails" />
+				<form:input path="user" type="hidden" value="${loggedUser.id}" />
+			</div>
+			<br>
+
+			<div class="jus">
+				<a href="/dashboard">Back To Dashboard</a> <input type="submit"
+					value="Edit Talk" />
+			</div>
+
+			<h3>Summary:</h3>
+
+			<form:errors path="talkTitle" />
+			<br>
+			<form:errors path="talkDate" />
+			<br>
+			<form:errors path="talkDetails" />
+			<br>
+
+		</form:form>
+	</div>
+</body>
+</html>

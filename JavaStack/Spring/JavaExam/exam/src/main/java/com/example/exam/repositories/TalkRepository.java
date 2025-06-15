@@ -1,0 +1,16 @@
+package com.example.exam.repositories;
+
+import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.example.exam.models.Talk;
+import com.example.exam.models.User;
+
+@Repository
+public interface TalkRepository extends CrudRepository<Talk,Long>{
+	List<Talk> findAll();
+	
+	List<Talk> findAllByUser(User user);
+}

@@ -1,0 +1,39 @@
+package com.example.exam.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.example.exam.models.Talk;
+import com.example.exam.services.TalkService;
+
+import jakarta.validation.Valid;
+
+@Controller
+public class TalkController {
+
+	@Autowired
+	TalkService talkService ;
+	
+	
+	
+	
+	 @GetMapping("/addtalk")
+	    public String newNinja(@Valid @ModelAttribute("talk") Talk talk, BindingResult result, Model model) {
+	        return "addTalk.jsp";
+	    }
+	
+	@PostMapping("/createtalk")
+	public String createTalk(@Valid @ModelAttribute("talk") Talk talk, BindingResult result, Model model) {
+		if (result.hasErrors()) {
+			return "addTalk.jsp";
+		} else {
+			talkService.createTalk(talk);
+			return "redirect:/dashboard";
+		}
+	}
+}

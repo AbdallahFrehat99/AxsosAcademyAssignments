@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+C:\Users\abdal\OneDrive\Desktop\JavaExam\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1694746526.index
+2954619695.index
+3931785798.index
+574532621.index
+1586415838.index
+2659984101.index
+192431737.index

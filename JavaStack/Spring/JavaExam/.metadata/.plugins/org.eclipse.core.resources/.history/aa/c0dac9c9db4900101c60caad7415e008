@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+body{
+	width:70%;
+}
+.reg{
+	display: flex;
+	justify-content: space-around;
+}

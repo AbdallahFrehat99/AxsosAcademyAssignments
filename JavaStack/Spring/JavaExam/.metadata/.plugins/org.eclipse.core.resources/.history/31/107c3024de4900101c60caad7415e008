@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+body {
+	width: 45%;
+	margin: auto;
+}
+
+.reg {
+	display: flex;
+	justify-content: space-between;
+}
+
+.field {
+	display: flex;
+	justify-content: space-between;
+}
+
+table {
+	margin: auto;
+	text-align: Center;
+	border-collapse: collapse;
+	font-size: large;
+}
+
+table tr {
+	padding :10 px;
+	border-bottom: 1px solid black;
+}
