@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-const HomeComponent = ({firstname,lastname,age,haircolor}) => {
+const HomeComponent = (props) => {
+    const {firstname,lastname,age,haircolor} = props;
     const [newAge,setNewAge] = useState(age)
 
     const addAge = () => {
