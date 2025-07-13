@@ -1,0 +1,52 @@
+use my_first_db.
+---------------------------------------------------------------------------------------------
+db.createCollection("students").
+---------------------------------------------------------------------------------------------
+db.students.insertOne({name:"abdallah",home_state:"jenin",lucky_number:8,birthday:{month:8,day:8,year:1999}})
+
+db.students.insertOne({name:"ahmad",home_state:"jenin",lucky_number:8,birthday:{month:8,day:8,year:1999}})
+
+db.students.insertOne({name:"ibraheem",home_state:"jenin",lucky_number:8,birthday:{month:8,day:8,year:1999}})
+
+db.students.insertOne({name:"mahmoud",home_state:"jenin",lucky_number:2,birthday:{month:8,day:8,year:1999}})
+
+db.students.insertOne({name:"khalil",home_state:"ramallah",lucky_number:2,birthday:{month:8,day:8,year:1999}})
+---------------------------------------------------------------------------------------------
+db.students.find()
+---------------------------------------------------------------------------------------------
+db.students.find({home_state:'jenin'})  
+---------------------------------------------------------------------------------------------
+my_first_db> db.students.find({lucky_number:{$gt:3}})
+---------------------------------------------------------------------------------------------
+db.students.updateMany({},{$set:{intrests:['coding', 'brunch', 'MongoDB'] } })
+---------------------------------------------------------------------------------------------
+db.students.updateOne({_id:ObjectId('686f863d3b3e7ba0b4718dc4')},{$addToSet:{intrests:'Basketball' } })
+
+db.students.updateOne({_id:ObjectId('686f86bd3b3e7ba0b4718dc5')},{$addToSet:{intrests:'swimming' } })
+
+db.students.updateOne({_id:ObjectId('686f86bd3b3e7ba0b4718dc6')},{$addToSet:{intrests:'football' } })
+
+db.students.updateOne({_id:ObjectId('686f86bd3b3e7ba0b4718dc7')},{$addToSet:{intrests:'qwe' } })
+
+db.students.updateOne({_id:ObjectId('686f86bd3b3e7ba0b4718dc8')},{$addToSet:{intrests:'qaz' } })
+---------------------------------------------------------------------------------------------
+db.students.updateOne({_id:ObjectId('686f86bd3b3e7ba0b4718dc5')},{$addToSet:{intrests:'Taxes' } })
+---------------------------------------------------------------------------------------------
+db.students.updateOne({_id: ObjectId('686f86bd3b3e7ba0b4718dc5')},{$pull:{intrests: "Taxes"}})
+---------------------------------------------------------------------------------------------
+db.students.deleteMany({home_state:'jenin'})
+
+---------------------------------------------------------------------------------------------
+db.students.findOneAndDelete({name:'khalil'})
+---------------------------------------------------------------------------------------------
+db.students.findOneAndDelete({lucky_number:{$gt:5}})
+
+---------------------------------------------------------------------------------------------
+db.students.updateMany({},{$set:{number_of_belts:0 } })
+
+---------------------------------------------------------------------------------------------
+ db.students.updateMany({home_state:'jenin'}, {$inc: {number_of_belts: 1}})
+
+---------------------------------------------------------------------------------------------
+db.students.updateMany({},{$currentDate:{updated_on:true}})
+
