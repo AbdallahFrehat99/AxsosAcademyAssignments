@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { DeleteComponent } from '../presintational/DeleteComponent';
     
 const ProductList = (props) => {
         const { removeFromDom } = props;
@@ -18,7 +19,7 @@ const deleteProduct = (productId) => {
             {props.products.map( (product, i) =>
                  <div>
                  <Link to={`/product/${product._id}`}><h2>{product.title}</h2></Link>
-                 <button onClick={(e)=>{deleteProduct(product._id)}}> Delete </button>
+                 <DeleteComponent handleDelete={()=>deleteProduct(product._id)} />
                     </div>
             )}
         </div>

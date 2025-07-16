@@ -1,24 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import { Routes, Route } from 'react-router-dom';
-
-import MainComponent from './components/MainComponent'
-import ProductComponent from './components/ProductComponent'
-import ProductList from './components/ProductList';
-import Detail from './components/Detail';
-import Update from './components/Update';
+import MainComponent from './components/functional/MainComponent'
+import Detail from './components/functional/Detail';
+import ProductForm from './components/functional/ProductForm';
 function App() {
 
   return (
     <>
 
       <Routes>
-        <Route path="/" element={<ProductComponent />} />
         <Route element={<MainComponent />} path="/product/" />
         <Route element={<Detail />} path="/product/:id" />
-        <Route element={<Update/>} path="/product/:id/edit"/>
+        <Route element={<ProductForm type='update'/>} path="/product/:id/edit"/>
       </Routes>
     </>
   )
